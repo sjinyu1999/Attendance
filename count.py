@@ -1,5 +1,4 @@
 import os
-import time
 import win32com.client as win32
 #print(os.getcwd())
 path=os.getcwd()
@@ -34,49 +33,46 @@ maxro=int(maxrow/2)
 for i in range(minrow, maxro-1):
     # 录入姓名
     m += 2
-    c1 = str(ws.cell(row=m, column=11).value)
-    c1 ='"'+c1+'"'
-    #print(c1)
-    # print(c1)
+    name = str(ws.cell(row=m, column=11).value)
+    name ='"'+name+'"'
+    #print(name)
     # 录入工号
-    c5 = str(ws.cell(row=m, column=3).value)
-    c5 = '"'+c5+'"'
-    # print('"'+c5+'"')
+    number = str(ws.cell(row=m, column=3).value)
+    number = '"'+number+'"'
+    # print('"'+number+'"')
     # 录入部门
-    c6 = str(ws.cell(row=m, column=20).value)
-    if(c6=="None"):
-        c6='" "'
+    apartment = str(ws.cell(row=m, column=20).value)
+    if(apartment=="None"):
+        apartment='" "'
     else:
-        c6='"'+c6+'"'
+        apartment='"'+apartment+'"'
     # 录入上下班时间
     n += 2
-    for j in range(mincol-1, maxcol):
-        j = j+1
+    for j in range(mincol, maxcol):
         # 录入日期
-        c2 = ws.cell(row=4, column=j).value
+        date = ws.cell(row=4, column=j).value
         # 数值保留两位
-        c2 = "{0:02d}".format(c2)
-        c2 = "2021-09-"+str(c2)
-        c2 = '"'+c2+'"'
-        #print('"'+c2+'"')
+        date = "{0:02d}".format(date)
+        date = "2021-09-"+str(date)
+        date = '"'+date+'"'
+        #print('"'+date+'"')
         #录入时间
-        c3 = str(ws.cell(row=n, column=j).value)
-        #print(len(c3))
-        if(len(c3)==4):
+        time = str(ws.cell(row=n, column=j).value)
+        #print(len(time))
+        if(len(time)==4):
             #print("空")
-            c3='" "'+', " "'
-        elif(len(c3)==6):
-            #print("上班时间："+c3[0:5])
-            c3='"'+c3[0:5]+'"'+', " "'
-        elif(len(c3)==12):
-            c3='"'+c3[0:5]+'"'+', '+c3[6:11]
-            #print("上班时间："+c3[0:5])
-            #print("下班时间："+c3[6:11])
-        elif(len(c3)==18):
-            c3='"'+c3[0:5]+'"'+', '+c3[12:17]
-            #print("上班时间："+c3[0:5])
-            #print("下班时间："+c3[12:17])
-        #print(c3)
-        #print("姓名："+c1+",日期："+c2+","+goin+',备注：" "'+",工号："+c5+",部门："+c6)
-        print(c1+", "+c2+", "+c3+', " "'+", "+c5+", "+c6)
-
+            time='" "'+', " "'
+        elif(len(time)==6):
+            #print("上班时间："+time[0:5])
+            time='"'+time[0:5]+'"'+', " "'
+        elif(len(time)==12):
+            time='"'+time[0:5]+'"'+', '+time[6:11]
+            #print("上班时间："+time[0:5])
+            #print("下班时间："+time[6:11])
+        elif(len(time)==18):
+            time='"'+time[0:5]+'"'+', '+time[12:17]
+            #print("上班时间："+time[0:5])
+            #print("下班时间："+time[12:17])
+        #print(goin)
+        #print("姓名："+name+",日期："+date+","+goin+',备注：" "'+",工号："+number+",部门："+apartment)
+        print(name+", "+date+", "+time+', " "'+", "+number+", "+apartment)
