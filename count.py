@@ -1,11 +1,11 @@
 import os
 import time
 import win32com.client as win32
-print(os.getcwd())
+#print(os.getcwd())
 path=os.getcwd()
 path1="\\09月汇总表"
 fname = path+path1
-print(fname)
+#print(fname)
 excel = win32.gencache.EnsureDispatch('Excel.Application')
 wb = excel.Workbooks.Open(fname)
 # FileFormat = 51 is for .xlsx extension
