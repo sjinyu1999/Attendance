@@ -61,10 +61,11 @@ for i in range(minrow, maxrow-1):
         #print(len(time))
         if(len(time)==4):
             #print("空")
-            time='" "'+', " "'
+            #time='" "'+', " "'
+            continue
         elif(len(time)==6):
             #print("上班时间："+time[0:5])
-            time='"'+time[0:5]+'"'+', " "'
+            time='"'+time[0:5]+'"'+', "'+time[0:5]+'"'
         elif(len(time)==12):
             time='"'+time[0:5]+'"'+', "'+time[6:11]+'"'
             #print("上班时间："+time[0:5])
