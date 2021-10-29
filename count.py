@@ -1,8 +1,6 @@
-import openpyxl
-import numpy as np
-import re
 import os
-'''import win32com.client as win32
+import time
+import win32com.client as win32
 print(os.getcwd())
 path=os.getcwd()
 path1="\\09月汇总表"
@@ -16,10 +14,9 @@ wb.SaveAs(fname, FileFormat = 51)
 # wb.SaveAs(fname[:-1], FileFormat = 56)
 wb.Close()
 excel.Application.Quit()
-print("转换成功！！！！")'''
+print("转换成功！！！！")
 # 删除原格式的表“09月汇总表.xls”
 # os.remove("09月汇总表.xls")
-from openpyxl import Workbook
 from openpyxl import load_workbook
 wb = load_workbook(filename='09月汇总表.xlsx')
 # print(wb.sheetnames)
@@ -79,7 +76,7 @@ for i in range(minrow, maxro-1):
             c3='"'+c3[0:5]+'"'+', '+c3[12:17]
             #print("上班时间："+c3[0:5])
             #print("下班时间："+c3[12:17])
-        #print(goin)
+        #print(c3)
         #print("姓名："+c1+",日期："+c2+","+goin+',备注：" "'+",工号："+c5+",部门："+c6)
         print(c1+", "+c2+", "+c3+', " "'+", "+c5+", "+c6)
 
