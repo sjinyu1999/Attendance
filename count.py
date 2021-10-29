@@ -73,6 +73,6 @@ for i in range(minrow, maxro-1):
             time='"'+time[0:5]+'"'+', '+time[12:17]
             #print("上班时间："+time[0:5])
             #print("下班时间："+time[12:17])
-        #print(goin)
-        #print("姓名："+name+",日期："+date+","+goin+',备注：" "'+",工号："+number+",部门："+apartment)
+        #print(time)
+        #print("姓名："+name+",日期："+date+","+time+',备注：" "'+",工号："+number+",部门："+apartment)
         print(name+", "+date+", "+time+', " "'+", "+number+", "+apartment)
