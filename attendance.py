@@ -137,7 +137,6 @@ for i in range(minrow, maxrow-1):
         #创建连接数据库
         conn = sqlite3.connect('attendence_sql.db')
         #print(conn)
-        # 3、使用execute 方法执行 SQL 语句（DDL）
         sql_create= '''
             CREATE TABLE 'attendance_sheet' 
                         ('name' text,
