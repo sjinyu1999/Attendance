@@ -75,7 +75,7 @@ for i in range(minrow, maxrow-1):
     #value2=value.split(",")[0]
     #name=value2
     #print(name)
-    #result=number+", "+name+", "+apartment
+    #result=number+", "+name+", "+department
     #content = result.split(',')
     #print(content)
     # 录入部门
