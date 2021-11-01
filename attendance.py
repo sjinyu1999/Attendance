@@ -1,6 +1,6 @@
 import os
 import json
-'''import win32com.client as win32
+import win32com.client as win32
 #print(os.getcwd())
 path=os.getcwd()
 path1="\\09月汇总表"
@@ -14,7 +14,7 @@ wb.SaveAs(fname, FileFormat = 51)
 # wb.SaveAs(fname[:-1], FileFormat = 56)
 wb.Close()
 excel.Application.Quit()
-print("转换成功！！！！")'''
+print("转换成功！！！！")
 # 删除原格式的表“09月汇总表.xls”
 # os.remove("09月汇总表.xls")
 from openpyxl import load_workbook
