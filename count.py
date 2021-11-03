@@ -48,13 +48,24 @@ for i in range(minrow, maxrow-1):
         apartment='"'+apartment+'"'
     # 录入上下班时间
     n += 2
-    for j in range(mincol, maxcol):
-        # 录入日期
-        date = ws.cell(row=4, column=j).value
-        # 数值保留两位
-        date = "{0:02d}".format(date)
-        date = "2021-09-"+str(date)
+    # 录入日期
+    date = str(ws.cell(row=3, column=3).value)
+    #print(date1[0:7])
+    date2=date[0:4]
+    # 数值保留两位
+    date3=int(date[6:7])
+    date3="{0:02d}".format(date3)
+    #print(date3)
+    date4=int(date[16:18])
+    date4="{0:02d}".format(date4)
+    date4=int(date4)
+    #print(date4)
+    for j in range(mincol, date4+1):
+        date1 = ws.cell(row=4, column=j).value
+        date = "{0:02d}".format(date1)
+        date = date2+"-"+str(date3)+"-"+str(date)
         date = '"'+date+'"'
+        #print(date)
         #print('"'+date+'"')
         #录入时间
         time = str(ws.cell(row=n, column=j).value)
